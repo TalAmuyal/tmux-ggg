@@ -1,0 +1,48 @@
+[project]
+name = "tmux-ggg"
+version = "1.0.0"
+requires-python = ">=3.11"
+dependencies = [
+    "typer",
+]
+description = "A Tmux session manager"
+license = { file = "LICENSE.txt" }
+readme = "README.md"
+authors = [
+    { name = "Tal Amuyal", email = "TalAmuyal@gmail.com" },
+]
+keywords = [
+    "tmux",
+    "terminal",
+    "cli",
+    "productivity",
+    "session manager",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Repository = "https://github.com/TalAmuyal/tmux-ggg"
+documentation = "https://github.com/TalAmuyal/tmux-ggg"
+changelog = "https://github.com/TalAmuyal/tmux-ggg/releases"
+
+[project.scripts]
+ggg = "tmux_ggg:main.app"
+
+[build-system]
+requires = ["uv_build>=0.8.17"]
+build-backend = "uv_build"
