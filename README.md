@@ -9,7 +9,8 @@ uv tool install tmux-ggg
 # Usage
 
 ```bash
-ggg add ~/workspace # Register a directory for ggg to look for projects
+ggg add -w ~/workspace # Register a directory for ggg to look for projects
+ggg add -p ~/.local/my-project # Register a directory of a specific project
 
 ggg # Open a list of inactive projects to start a new tmux session and attach to it
 ```
