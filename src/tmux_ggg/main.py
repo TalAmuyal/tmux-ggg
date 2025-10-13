@@ -4,6 +4,7 @@ import typer
 
 from . import (
     configured_paths,
+    git,
     session_chooser,
     tmux,
 )
@@ -62,11 +63,22 @@ def get_potential_sessions(
 ) -> list[tmux.Session]:
     return [
         tmux.Session(
-            name=folder_name_to_session_name(p.name),
+            name=calculate_session_name(p),
             path=p,
         )
         for p in roots
     ]
+
+
+def calculate_session_name(path: pathlib.Path) -> str:
+    cleanness = "CLN" if git.is_repo_clean(path) else "WIP"
+
+    result = f"[{cleanness}] {path.name}"
+
+    if branch := git.get_current_branch(path):
+        result += f" ({branch})"
+
+    return result
 
 
 def folder_name_to_session_name(folder_name: str) -> str:
